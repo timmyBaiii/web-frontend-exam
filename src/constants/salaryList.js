@@ -20,6 +20,6 @@ const data = [
     {
         "id": 7, "label": "年薪 2,000,000 ~ 2,500,000 元"
     }
-]
+];
 
-export default data
+export default data;
