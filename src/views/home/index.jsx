@@ -33,6 +33,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination as Pag } from "swiper/modules";
+import "animate.css";
 
 const Home = () => {
     const [educationList, setEducationList] = useState([]);
@@ -263,7 +264,7 @@ const Home = () => {
                     <Grid className='row' container>
                         <Grid className="grid" item xs={12} sm={12} md={12} lg={12} xl={12}>
                             <Card className="card job">
-                                <div className="titleGroup">
+                                <div className="titleGroup animate__animated animate__fadeInDown">
                                     <Typography className="title" variant="h5" component='div'>適合前端工程師的好工作</Typography>
                                 </div>
 
@@ -376,7 +377,7 @@ const Home = () => {
                                                         <Grid key={index} className="grid" item xs={12} sm={12} md={12} lg={4} xl={4}>
                                                             <Card className="card haveInformation">
                                                                 <Typography
-                                                                    className="companyName"
+                                                                    className="companyName animate__animated animate__fadeInDown"
                                                                     variant="h5"
                                                                     component="div"
                                                                 >
@@ -384,7 +385,7 @@ const Home = () => {
                                                                 </Typography>
 
                                                                 <Typography
-                                                                    className="jobTitle"
+                                                                    className="jobTitle animate__animated animate__fadeInDown"
                                                                     variant="p"
                                                                     component="div"
                                                                 >
@@ -392,7 +393,7 @@ const Home = () => {
                                                                 </Typography>
 
                                                                 <Typography
-                                                                    className="education"
+                                                                    className="education animate__animated animate__fadeInDown"
                                                                     variant="p"
                                                                     component="div"
                                                                 >
@@ -400,7 +401,7 @@ const Home = () => {
                                                                 </Typography>
 
                                                                 <Typography
-                                                                    className="salary"
+                                                                    className="salary animate__animated animate__fadeInDown"
                                                                     variant="p"
                                                                     component="div"
                                                                 >
@@ -411,7 +412,7 @@ const Home = () => {
                                                                     lines={2}
                                                                     tag={"p"}
                                                                     ellipsisChars={"..."}
-                                                                    tagClass={"preview"}
+                                                                    tagClass={"preview animate__animated animate__fadeInDown"}
                                                                     debounceTimeoutOnResize={200}
                                                                     useJsOnly={true}
                                                                 >
