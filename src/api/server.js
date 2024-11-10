@@ -5,7 +5,7 @@ import request from "@/utils/request";
  */
 export const getEducationList = () => {
     return request({
-        url: "/api/v1/educationLevelList",
+        url: `${process.env.REACT_APP_API_NAMESPACE}/educationLevelList`,
         method: "get",
     });
 };

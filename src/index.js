@@ -77,7 +77,7 @@ new Server({
         server.createList("salaryList", salaryList.length);
     },
     routes() {
-        this.namespace = "api/v1";
+        this.namespace = process.env.REACT_APP_API_NAMESPACE;
 
         this.get("/jobs", (schema, request) => {
             // * filter
