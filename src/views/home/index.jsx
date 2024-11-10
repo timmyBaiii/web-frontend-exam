@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import React, { Fragment, useEffect, useMemo, useState } from "react";
 import FigureBackground from "@/assets/FigureBackground.png";
 import Figure from "@/assets/Figure.png";
 import LeftEye from "@/assets/LeftEye.png";
 import RightEye from "@/assets/RightEye.png";
 import Heeloo from "@/assets/Heeloo.png";
-import "./App.sass";
+import "./index.sass";
 import {
     getEducationList,
     getSalaryList,
@@ -34,7 +34,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination as Pag } from "swiper/modules";
 
-const App = () => {
+const Home = () => {
     const [educationList, setEducationList] = useState([]);
     const [salaryList, setSalaryList] = useState([]);
     const [jobList, setJobList] = useState([]);
@@ -222,12 +222,6 @@ const App = () => {
         });
     };
 
-
-    const ref = useRef(null);
-    const ref2 = useRef(null);
-
-
-
     useEffect(() => {
         handleEducationList();
         handleSalaryList();
@@ -237,37 +231,20 @@ const App = () => {
         window.addEventListener("resize", handleResize);
         document.addEventListener("mousemove", handleFigureEyesFloating);
 
-        if (ref.current) {
-            const f = ref.current.clientHeight;
-            const proportion = f * 0.88;
-            console.log(proportion);
-            console.log(ref);
-            // console.log(ref);
-            // console.log(ref2);
-        }
-
         return () => {
             window.removeEventListener("resize", handleResize);
             document.removeEventListener("mousemove", handleFigureEyesFloating);
         };
     }, []);
 
-    useEffect(() => {
-        if (ref.current) {
-            console.log(ref.current.clientHeight);
-        }
-    }, [ref]);
-
-
-
     return (
-        <div className="App">
+        <div className="home">
             <Box className="character">
                 <Grid className='row' container>
                     <Grid className="grid" item xs={10} sm={10} md={10} lg={9} xl={9}>
                         <div className="persona">
                             <img className="figureBackground" src={FigureBackground} />
-                            <img className="figure" src={Figure} ref={ref} />
+                            <img className="figure" src={Figure} />
                             <img id="leftEye" className="eye" src={LeftEye} />
                             <img id="rightEye" className="eye" src={RightEye} />
                         </div>
@@ -281,7 +258,7 @@ const App = () => {
                 </Grid>
             </Box>
 
-            <Box className="informationCard" ref={ref2}>
+            <Box className="informationCard">
                 <Container className="container" maxWidth='xl'>
                     <Grid className='row' container>
                         <Grid className="grid" item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -539,4 +516,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Home;

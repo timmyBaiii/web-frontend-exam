@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import jobList from "./constants/jobList";
@@ -7,6 +7,7 @@ import salaryList from "./constants/salaryList";
 import { Factory, Model, Server } from "miragejs";
 import "normalize.css";
 import "./index.sass";
+import Router from "@/router";
 
 const filterFormat = (data, companyName, educationLevel, salaryLevel) => {
     let result = data;
@@ -139,4 +140,10 @@ new Server({
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+    <Router>
+        <App>
+            <Fragment></Fragment>
+        </App>
+    </Router>
+);
