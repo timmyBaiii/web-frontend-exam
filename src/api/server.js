@@ -15,7 +15,7 @@ export const getEducationList = () => {
  */
 export const getSalaryList = () => {
     return request({
-        url: `${process.env.REACT_APP_API_NAMESPACE}/salaryLevelList`,
+        url: "/api/v1/salaryLevelList",
         method: "get"
     });
 };
@@ -25,14 +25,14 @@ export const getSalaryList = () => {
  */
 export const getJobList = () => {
     return request({
-        url: `${process.env.REACT_APP_API_NAMESPACE}/jobs`,
+        url: "api/v1/jobs",
         method: "get"
     });
 };
 
 export const getJobId = (id) => {
     return request({
-        url: `${process.env.REACT_APP_API_NAMESPACE}/jobs/${id}`,
+        url: `api/v1/jobs/${id}`,
         method: "get"
     });
 };
