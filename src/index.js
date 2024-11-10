@@ -5,6 +5,8 @@ import jobList from "./constants/jobList";
 import educationList from "./constants/educationList";
 import salaryList from "./constants/salaryList";
 import { Factory, Model, Server } from "miragejs";
+import "normalize.css";
+import "./index.sass";
 
 const filterFormat = (data, companyName, educationLevel, salaryLevel) => {
     let result = data;

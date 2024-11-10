@@ -102,6 +102,7 @@ module.exports = {
         "brace-style": ["error", "stroustrup"],
         "comma-style": ["error", "last"],
         "block-spacing": ["error", "never"],
-        "no-undef": "off"
+        "no-undef": "off",
+        "no-extra-parens": "off"
     }
 };

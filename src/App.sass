@@ -1,0 +1,286 @@
+@use './styles/colors.sass'
+
+.App
+    background: linear-gradient(90.51deg, #868686 1.54%, #5C5C5C 101.46%)
+
+    .character
+        background-image: url('./assets/Mountain.jpg')
+        background-size: 100% 100%
+        background-repeat: no-repeat
+
+        .row
+            .grid
+                .persona
+                    position: relative
+                    width: 100%
+                    max-width: calc( 100% - 8.333% )
+
+                    img.figureBackground
+                        display: block
+                        transform: translateX(-0px)
+                        width: 100%
+                        height: 100%
+                        left: 0px
+
+                    img.figure
+                        display: block
+                        position: absolute
+                        width: 100%
+                        left: 0px
+                        bottom: 0px
+                        z-index: 2
+
+                    img.eye
+                        position: absolute
+                        width: 6%
+                        height: 6%
+
+                    img#leftEye
+                        left: 50.3%
+                        top: 36%
+
+                    img#rightEye
+                        left: 64.3%
+                        top: 35.3%
+
+                .welcome
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    height: 100%
+                    position: relative
+
+                    .heeloo
+                        position: absolute
+                        left: -90%
+                        bottom: 20%
+                        width: 160%
+                        max-width: 160%
+                        transform: scale(1.2)
+                        animation: heeloo 1.5s infinite alternate
+
+    .informationCard
+        position: relative
+        z-index: 10
+        top: -2rem
+
+        .container
+            .row
+                .grid
+                    .card
+                        padding: 20px
+                        border-radius: 12px
+
+                        .titleGroup
+                            margin-bottom: 20px
+                            margin-left: 10px
+
+                            .title
+                                position: relative
+                                padding: 0px 5px
+                                margin-left: 10px
+                                font-weight: 900
+
+                                &:before
+                                    content: ''
+                                    display: block
+                                    position: absolute
+                                    top: 50%
+                                    left: -10px
+                                    width: 5px
+                                    height: 60%
+                                    transform: translateY(-55%)
+                                    border-radius: 20px
+                                    background-color: colors.$color_yellow
+
+                        .filterGroup
+                            margin-bottom: 20px
+
+                            .group
+                                margin-left: 10px
+                                margin-right: 10px
+                                height: 100%
+
+                            .buttonSearch
+                                background-color: colors.$color_gray
+                                white-space: nowrap
+
+                        .companyGroup
+                            min-height: 525px
+
+                            .card.haveInformation
+                                position: relative
+                                border: 2px solid #d9d9d9
+                                box-shadow: initial
+                                margin: 0px 10px 20px 10px
+                                height: 200px
+                                transition: 0.5s
+
+                                &:hover
+                                    box-shadow: 0px 0px 20px #d9d9d9
+                                    transform: translate(-5px, -5px)
+
+                                .companyName, .jobTitle, .education,
+                                .salary, .viewDetails
+                                    margin-bottom: 6px
+
+                                .companyName
+                                    font-weight: 900
+
+                                .jobTitle, .education, .salary
+                                    &:before
+                                        content: ''
+                                        display: inline-block
+                                        width: 25px
+                                        height: 25px
+                                        vertical-align: middle
+                                        background-repeat: no-repeat
+
+                                .jobTitle
+                                    &:before
+                                        background-image: url('./assets/jobIcon.png')
+
+                                .education
+                                    &:before
+                                        background-image: url('./assets/education.png')
+
+                                .salary
+                                    text-overflow: ellipsis
+
+                                    &:before
+                                        background-image: url('./assets/salaryIcon.png')
+                                .preview
+                                    margin: 0px
+                                    line-height: 24px
+
+                                .viewDetails
+                                    color: colors.$color_yellow
+                                    padding: 10px
+                                    margin: 0px
+                                    position: absolute
+                                    bottom: 0
+                                    left: 50%
+                                    transform: translateX(-50%)
+                                    font-weight: 900
+
+                            .card.noInformation
+                                border: 2px solid rgba(colors.$color_black, 0.1)
+                                box-shadow: initial
+                                height: 480px
+                                display: flex
+                                margin: 0px 10px 0px 10px
+                                justify-content: center
+                                align-items: center
+                                color: rgba(colors.$color_black, 0.6)
+
+                        .pagination
+                            display: flex
+                            justify-content: center
+
+
+
+.workDialog
+    .workDialogTitle
+        font-weight: 900
+
+    .workDialogContent
+        .title
+            font-weight: 900
+            margin-bottom: 10px
+
+        .swiper
+            width: 100%
+            height: 100%
+
+            .swiper-slide
+                text-align: center
+                font-size: 18px
+                display: flex
+                justify-content: center
+                align-items: center
+
+                & img
+                    display: block
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+
+            .swiper-slide img
+                display: block
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+            .swiper-slide
+                width: 50%
+
+            .swiper-pagination
+                position: relative
+                bottom: -3px !important
+
+                .swiper-pagination-bullet.swiper-pagination-bullet-active
+                    width: 30px
+                    border-radius: 50px
+                    background-color: colors.$color_yellow
+                    animation: swiper 0.5s 1
+
+    .workDialogContent::-webkit-scrollbar
+        width: 0px
+
+    .workDialogContent::-webkit-scrollbar-track
+        background-color: colors.$color_gray
+
+    .workDialogContent::-webkit-scrollbar-thumb
+        background-color: colors.$color_yellow
+
+    .workDialogActions
+        .workDialogCloseButton
+            color: colors.$color_gray
+
+            &:hover
+                background-color: rgba(colors.$color_gray, 0.1)
+
+
+
+
+@media screen and ( min-width: 576px )
+    .heeloo
+        width: 160%
+
+    .App .informationCard
+        top: -1rem
+
+@media screen and ( min-width: 768px )
+    .heeloo
+        width: 150%
+
+    .App .informationCard
+        top: -3.2rem
+
+@media screen and ( min-width: 992px )
+    .heeloo
+        width: 150%
+
+    .App .informationCard
+        top: -3.2rem
+
+@media screen and ( min-width: 1140px )
+    .heeloo
+        width: 150% !important
+
+    .App .informationCard
+        top: -8rem
+
+@keyframes swiper
+    from
+        width: 8px
+    to
+        width: 30px
+
+@keyframes heeloo
+    0%
+        transform: scale(0.9)
+    50%
+        translate: scale(1)
+    100%
+        translate: scale(1.8)
