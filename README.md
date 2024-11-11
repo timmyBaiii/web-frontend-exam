@@ -8,6 +8,8 @@
 
 1. 語言：Javascript
 2. Framework：React.js
+3. UI Framework: Material UI
+4. 樣式語言: sass
 
 ### 如何執行此專案
 
@@ -63,31 +65,3 @@ README.md                        說明文件
 轉換成位置，在加上 codepen 上面的別人專案與 chatgpt 收集回來的參考
 資料先予以實驗，最後在整合回 react 專案上面
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
