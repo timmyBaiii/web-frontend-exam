@@ -142,8 +142,6 @@ new Server({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <App>
-        <Router>
-            {/* <Fragment></Fragment> */}
-        </Router>
+        <Router></Router>
     </App>
 );
