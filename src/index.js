@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import jobList from "./constants/jobList";
@@ -141,9 +141,9 @@ new Server({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <Router>
-        <App>
-            <Fragment></Fragment>
-        </App>
-    </Router>
+    <App>
+        <Router>
+            {/* <Fragment></Fragment> */}
+        </Router>
+    </App>
 );
