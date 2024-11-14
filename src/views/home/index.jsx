@@ -32,7 +32,7 @@ import TextEllipsis from "react-text-ellipsis";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination as Pag } from "swiper/modules";
+import { Pagination as SwiperPagination } from "swiper/modules";
 import "animate.css";
 
 const Home = () => {
@@ -120,6 +120,7 @@ const Home = () => {
     const handleFilterJobs = () => {
         if (companyNameInput === "" && educationInput === "0" && salaryInput === "0") {
             setJobFilterResult(jobList);
+            setPage(1);
         }
         else {
             const smallCompanyName = companyNameInput.toLowerCase();
@@ -156,6 +157,7 @@ const Home = () => {
             });
 
             setJobFilterResult(result);
+            setPage(1);
         }
     };
 
@@ -481,7 +483,7 @@ const Home = () => {
                                     pagination={{
                                         clickable: true,
                                     }}
-                                    modules={[Pag]}
+                                    modules={[SwiperPagination]}
                                     className="mySwiper"
                                 >
                                     {
